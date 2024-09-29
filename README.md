@@ -2,7 +2,8 @@
 
 This is a simple to-do list management application built using the PERN (PostgreSQL, Express, React, Node.js) stack.
 
-![todo-icon](https://github.com/user-attachments/assets/875bdf2f-c184-45ef-9afd-a1b8a655c9a7)
+![todo-screenshoot](https://github.com/user-attachments/assets/9bb76873-3a93-468f-8732-1dbc636bb45d)
+
 
 
 ## Features
