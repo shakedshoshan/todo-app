@@ -1,10 +1,16 @@
 const express = require("express");
 const app = express();
+const serverless = require("serverless-http");
 const cors = require("cors");
 const pool = require("./db");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 //middleware
-app.use(cors());
+if(process.env.NODE_ENV === "development"){ 
+    app.use(cors());
+}
 app.use(express.json()); //req.body
 
 
@@ -88,7 +94,11 @@ app.delete("/todos/:id", async (req, res) => {
 //get all tasks
 
 
+if(process.env.NODE_ENV === "development"){
+    app.listen(5000, () => {
+        console.log("server has started on port 5000");
+    });
+}
 
-app.listen(5000, () => {
-    console.log("server has started on port 5000");
-  });
+
+  module.exports = { handler: serverless(app) };
